@@ -5,7 +5,7 @@ import time
 import sys
 
 while True:
-  charge = int(os.popen("acpi").read().split(", ")[1].rstrip("%"))
+  charge = int(os.popen("acpi").read().split(", ")[1].rstrip("%\n"))
   status = os.popen("acpi").read().split(", ")[0].split()[-1]
   print(charge, status)
 

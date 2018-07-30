@@ -206,7 +206,7 @@ bar {
 
 # startup
 exec --no-startup-id xset b off # disable annoying beeps
-exec --no-startup-id pulseaudio --start # for firefox...
+# exec --no-startup-id pulseaudio --start # for firefox...
 exec --no-startup-id /home/authmane512/.i3/check_battery.py 20
 
 exec nm-applet
