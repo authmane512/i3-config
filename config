@@ -28,7 +28,7 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # shortcuts
 bindsym $mod+Shift+b exec firefox
 bindsym $mod+Shift+f exec nemo --no-desktop # If you use nemo add "--no-desktop"
-bindsym $mod+Shift+s exec sublime-text
+bindsym $mod+Shift+s exec subl
 
 
 # change focus
@@ -212,4 +212,4 @@ exec nm-applet
 exec clipit
 exec xset b off # disable annoying beeps
 
-exec bash -c "while true; do ./.i3/check_battery.py 12; sleep 1; done"
+exec --no-startup-id /home/authmane512/.i3/check_battery.py 12

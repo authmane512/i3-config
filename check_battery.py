@@ -6,8 +6,12 @@ import sys
 
 while True:
   charge = int(os.popen("acpi").read().split(", ")[1].rstrip("%"))
-  with open("/tmp/check_battery.log", "a") as f:
-    f.write("{}: current charge of {}%\n".format(time.ctime(), charge))
-    if charge <= int(sys.argv[1]):
-      f.write(os.popen('i3-nagbar -t warning -m "Warning: battery is low!"').read())
-  time.sleep(10)
+  status = os.popen("acpi").read().split(", ")[0].split()[-1]
+  print(charge, status)
+
+  if charge <= int(sys.argv[1]) and status == "Discharging":
+    os.system('i3-nagbar -t warning -m "Warning: battery is low!"')
+  elif charge == 99 and status == "Unknown":
+    os.system('i3-nagbar -t warning -m "Warning: battery is full!"')
+
+  time.sleep(60)
