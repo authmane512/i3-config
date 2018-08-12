@@ -11,7 +11,7 @@ while True:
 
   if charge <= int(sys.argv[1]) and status == "Discharging":
     os.system('i3-nagbar -t warning -m "Warning: battery is low!"')
-  elif charge == 99 and status == "Unknown":
+  elif charge == 100 and status != "Discharging":
     os.system('i3-nagbar -t warning -m "Warning: battery is full!"')
 
   time.sleep(60)
