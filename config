@@ -67,10 +67,10 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # lock screen
-bindsym $mod+Mod1+l exec "i3lock -i .lockscreen.png; sleep 0.1; xset dpms force off"
+bindsym $mod+Mod1+l exec "i3lock -i .sunsetoveroldstones.png; sleep 0.1; xset dpms force off"
 
 # suspend
-bindsym $mod+Mod1+s exec "i3lock -i .lockscreen.png; sleep 1; sudo pm-suspend"
+bindsym $mod+Mod1+s exec /home/authmane512/.i3/suspend.sh
 
 # hibernate
 bindsym $mod+Mod1+h exec "gksudo pm-hibernate"
