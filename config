@@ -31,6 +31,7 @@ bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+b exec firefox
 bindsym $mod+Shift+f exec nemo --no-desktop # If you use nemo add "--no-desktop"
 bindsym $mod+Shift+s exec subl
+bindsym $mod+Shift+q exec qalculate
 
 
 # change focus
@@ -77,6 +78,9 @@ bindsym $mod+Mod1+h exec "gksudo pm-hibernate"
 
 # turn off computer
 bindsym $mod+Mod1+d exec "gksudo 'halt --poweroff'"
+
+# reboot
+bindsym $mod+Mod1+r exec "gksudo 'halt --reboot'"
 
 # turn off screen
 bindsym $mod+Mod1+o exec xset dpms force off
@@ -210,16 +214,20 @@ bar {
 # for_window [title="Files"] move window to workspace 3
 # for_window [title="term2"] move workspace number 3
 for_window [instance="gthumb"] floating enable
+for_window [instance="gThumb"] floating enable
+for_window [instance="vlc"] floating enable
+for_window [instance="qalculate"] floating enable
 
 # startup
 # exec --no-startup-id xinput set-prop 12 "Device Enabled" 0 # disable touchpad
 exec --no-startup-id xset b off # disable annoying beeps
 exec --no-startup-id xrandr --setprovideroutputsource 1 0
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec --no-startup-id /home/authmane512/.i3/check_battery.py 12
+exec --no-startup-id /home/authmane512/.i3/check_battery_ram.py 12
 
 exec nm-applet
 exec clipit
+exec skypeforlinux
 
 # exec --no-startup-id i3-msg 'workspace 2; exec terminator --title=Terminal'
 # exec --no-startup-id i3-msg 'workspace 3; exec nemo --no-desktop'
