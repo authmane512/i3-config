@@ -224,10 +224,12 @@ exec --no-startup-id xset b off # disable annoying beeps
 exec --no-startup-id xrandr --setprovideroutputsource 1 0
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id /home/authmane512/.i3/check_battery_ram.py 12
+exec --no-startup-id redshift -t 4500:2500 -b 1.0:0.8 -l geoclue2
 
 exec nm-applet
 exec clipit
 exec skypeforlinux
+exec nextcloud
 
 # exec --no-startup-id i3-msg 'workspace 2; exec terminator --title=Terminal'
 # exec --no-startup-id i3-msg 'workspace 3; exec nemo --no-desktop'
