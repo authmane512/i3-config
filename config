@@ -32,6 +32,8 @@ bindsym $mod+Shift+b exec firefox
 bindsym $mod+Shift+f exec nemo --no-desktop # If you use nemo add "--no-desktop"
 bindsym $mod+Shift+s exec subl
 bindsym $mod+Shift+q exec qalculate
+bindsym $mod+Shift+t exec flameshot gui # Take a screenshot
+bindsym $mod+Shift+p exec flameshot full --path /home/authmane512/physique1_chap12
 
 
 # change focus
@@ -227,9 +229,10 @@ exec --no-startup-id /home/authmane512/.i3/check_battery_ram.py 12
 exec --no-startup-id redshift -t 4500:2500 -b 1.0:0.8 -l geoclue2
 
 exec nm-applet
-exec clipit
+exec copyq
+exec flameshot
 exec skypeforlinux
-exec nextcloud
+exec sudo -u sync_pdfexpert syncthing
 
 # exec --no-startup-id i3-msg 'workspace 2; exec terminator --title=Terminal'
 # exec --no-startup-id i3-msg 'workspace 3; exec nemo --no-desktop'
