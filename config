@@ -33,7 +33,7 @@ bindsym $mod+Shift+f exec nemo --no-desktop # If you use nemo add "--no-desktop"
 bindsym $mod+Shift+s exec subl
 bindsym $mod+Shift+q exec qalculate
 bindsym $mod+Shift+t exec flameshot gui # Take a screenshot
-bindsym $mod+Shift+p exec flameshot full --path /home/authmane512/physique1_chap12
+bindsym $mod+Shift+p exec flameshot full --path /home/authmane512/Downloads
 
 
 # change focus
@@ -98,8 +98,10 @@ bindsym Ctrl+F6 exec amixer sset Master 5%+
 #bindsym XF86AudioMute exec amixer -q set Master toggl+e
 
 # brightness
-bindsym Ctrl+F7 exec xbacklight -dec 10
-bindsym Ctrl+F8 exec xbacklight -inc 10
+bindsym Ctrl+F7 exec /home/authmane512/.i3/brightness.py down
+bindsym Ctrl+F8 exec /home/authmane512/.i3/brightness.py up
+# bindsym Ctrl+F7 exec xbacklight -dec 10
+# bindsym Ctrl+F8 exec xbacklight -inc 10
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
@@ -232,7 +234,7 @@ exec nm-applet
 exec copyq
 exec flameshot
 exec skypeforlinux
-exec sudo -u sync_pdfexpert syncthing
+exec gksudo -u sync_pdfexpert syncthing
 
 # exec --no-startup-id i3-msg 'workspace 2; exec terminator --title=Terminal'
 # exec --no-startup-id i3-msg 'workspace 3; exec nemo --no-desktop'
